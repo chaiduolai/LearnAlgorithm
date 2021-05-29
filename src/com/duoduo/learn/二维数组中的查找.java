@@ -27,14 +27,27 @@ public class 二维数组中的查找 {
         System.out.println(aBoolean);
 
     }
+
+    /**
+     * 复杂度分析
+     * 时间复杂度：O(n^2)，因为最坏情况下，数组中的元素都需要遍历一次。
+     * 空间复杂度：O(1)
+     * @param arr
+     * @param target
+     * @return
+     */
     public static Boolean select1(int[][] arr, int target){
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if (arr[i][j]==target){
+        for (int[] ints : arr) {
+            for (int anInt : ints) {
+                if (anInt==target){
                     return true;
                 }
             }
         }
+        return false;
+    }
+    public static Boolean select2(int[][] arr, int target){
+
         return false;
     }
 }
